@@ -1,0 +1,53 @@
+{
+  "name": "sigsa_reviews",
+  "version": "1.0.0",
+  "description": "Sigsa is a web app that simulates an OpenTable restaurant page experience. This reviews service is responsible for delivering content+data for the reviews module on the page.",
+  "author": "Priyanka Piali Pramanik",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.16.0"
+  },
+  "scripts": {
+    "pretest": "eslint --ignore-path .eslintignore --ext .js,.jsx .",
+    "react-dev": "webpack -d --watch",
+    "start-server": "nodemon server/index.js",
+    "start-client": "live-server public",
+    "start-db": "mysql < ./database/schema.sql",
+    "seed": "mysql < ./database/seed/seed.sql",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sigsa-io/reviews.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sigsa-io/reviews/issues"
+  },
+  "homepage": "https://github.com/sigsa-io/reviews#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "jest": "^24.8.0",
+    "puppeteer": "^1.18.1",
+    "webpack": "^2.2.1"
+  }
+}
