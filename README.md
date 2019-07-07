@@ -86,8 +86,24 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Run `npm run start-server`
 - Keep this terminal window open to keep server running
 
+#### Start database
+- Start a MySql database server
+- From this repository's local root directory, create a `/database/secrets.js` file with the following content
+  ```sh
+  module.exports.login = { 
+    user: 'Your_MySQL_Username',
+    password: 'Your_MySQL_Password'
+  }; 
+
+  // Replace strings with your own MySQL username and password 
+  // Save this file
+  ``` 
+
+- In a terminal, navigate to project's root directory
+- Run `npm run start-db` to migrate schema to database  
+
 #### Other scripts
-Run scripts by typing `npm run <script name>` in terminal
+Run scripts by navigating to this project's root directory from the terminal and entering `npm run <script name>`.
 
 - `pretest`: find problematic patterns or code that doesn't adhere to style guidelines
 - `start-client`: test client code separately from server code using this development server with live reload capability
