@@ -12,7 +12,7 @@
     "react-dev": "webpack -d --watch",
     "start-server": "nodemon server/index.js",
     "start-client": "live-server public",
-    "seed": "node ./database/seed.js",
+    "start-db": "mysql < ./database/schema.sql",
     "test": "jest"
   },
   "repository": {
