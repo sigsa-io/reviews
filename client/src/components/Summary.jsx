@@ -11,9 +11,9 @@ const Summary = () => {
 
   return(
     <div id="reviews-summary" className="reviews-summary">
-  <div>
-    <h2>Summary</h2>
-  </div>
+
+
+
       <div className="reviews-summary-wrapper">
         <div className="reviews-summary-title">
           What {reviewersCount} People Are Saying
