@@ -5,6 +5,9 @@ const Summary = () => {
   let overallRatings = {food:4.9,service:5.0,ambience:4.9,value:4.5};
   let averageRating = 4.9;
   let reviewersCount = 55;
+  let ratingCategories = [5,4,3,2,1];
+  let numberOfReviewsByRating = {1: 2, 2: 0 , 3: 3, 4: 8, 5: 87};
+  let numberOfReviews = Object.values(numberOfReviewsByRating).reduce((x,y)=> x+y);
 
   return(
     <div id="reviews-summary" className="reviews-summary">
@@ -44,6 +47,26 @@ const Summary = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+          </div>
+
+          <div className="reviews-summary-filter-overall-ratings-wrapper">
+            <div className="reviews-summary-filter-overall-ratings">
+
+              {ratingCategories.map( (ratingCategory) =>
+                <div data-value={ratingCategory} data-parameter="filterByOverallRating" className="reviewUpdateParameter">
+                  <span>{ratingCategory}</span>
+                  <div className="reviews-summary-filter-overall-ratings-bar-container">
+                    <span
+                      style={{ width: numberOfReviewsByRating[ratingCategory]/numberOfReviews*100+`%` }}
+                      className="reviews-reviews-summary-filter-overall-ratings-bar"
+                    />
+                    <span />
+                  </div>
+                </div>
+              )}
+
             </div>
           </div>
         </div>
