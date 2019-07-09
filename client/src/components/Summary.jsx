@@ -2,6 +2,7 @@ import React from 'react';
 
 const Summary = () => {
 
+  let overallRatings = {food:4.9,service:5.0,ambience:4.9,value:4.5};
   let averageRating = 4.9;
   let reviewersCount = 55;
 
@@ -30,6 +31,19 @@ const Summary = () => {
                 <span>{averageRating}</span>
                 <span>based on recent ratings</span>
               </div>
+            </div>
+
+            <div className="reviews-summary-overall-ratings-wrapper">
+              {Object.keys(overallRatings).map(category=>(
+                <div className="reviews-summary-overall-ratings-individual-wrapper">
+                  <div className="reviews-summary-overall-ratings-individual-rating">
+                    {overallRatings[category]}
+                  </div>
+                  <div className="reviews-summary-overall-ratings-individual-category">
+                    {category}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
