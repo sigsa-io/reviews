@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 connection.connect();
 
 module.exports.getReviews = (id, setReviewsCB) => {
-  const queryText = `select 
+  const queryText_reviews = `select
   t.restaurant_id, r.restaurant_id, 
   t.restaurant_name, 
   r.review_id, 
@@ -34,10 +34,10 @@ module.exports.getReviews = (id, setReviewsCB) => {
   and 
   t.restaurant_id='${id}'`;
 
-  connection.query(queryText, (error, results) => {
-    if (error) setReviewsCB(error, null);
+  connection.query(queryText_reviews, (err_reviews, queryResults_reviews) => {
+    if (err_reviews) setReviewsCB(err_reviews, null);
 
-    const reviews = results.map(({
+    const reviews = queryResults_reviews.map(({
       restaurant_id,
       restaurant_name,
       review_id,
