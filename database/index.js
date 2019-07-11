@@ -53,7 +53,7 @@ module.exports.getSummary = (id, setSummaryCB) => {
         restaurant_id,
         reviewersCount,
         reviewsCount,
-        overall_ratings: {
+        overallRatings: {
           food,
           service,
           ambience,
