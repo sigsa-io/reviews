@@ -10,6 +10,48 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
+module.exports.getSummary = (id, setSummaryCB) => {
+  const queryText_summary = `select
+  restaurant_id,
+  COUNT(DISTINCT user_id) as reviewersCount,
+  COUNT(DISTINCT review_id) as reviewsCount,
+  AVG(rating_overall) as value,
+  AVG(rating_food) as food,
+  AVG(rating_service) as service,
+  AVG(rating_ambience) as ambience
+  from reviews
+  where
+  restaurant_id='${id}'`;
+
+  connection.query(queryText_summary, (err_summary, queryResult_summary) => {
+    if (err_summary) setSummaryCB(err_summary, null);
+
+    const {
+      restaurant_id,
+      reviewersCount,
+      reviewsCount,
+      value,
+      food,
+      service,
+      ambience,
+    } = queryResult_summary[0];
+
+      const summary = {
+        restaurant_id,
+        reviewersCount,
+        reviewsCount,
+        overall_ratings: {
+          food,
+          service,
+          ambience,
+          value,
+        },
+      };
+
+      setSummaryCB(null, summary);
+  });
+};
+
 module.exports.getReviews = (id, setReviewsCB) => {
   const queryText_reviews = `select
   t.restaurant_id, r.restaurant_id, 
