@@ -21,6 +21,16 @@ module.exports = {
     ],
     "rules": {
       "linebreak-style": ["warn", "unix"],
-      "camelcase": ["off", {"ignoreDestructuring": true}]
+      "camelcase": ["off", {"ignoreDestructuring": true}],
+      "jsx-a11y/label-has-associated-control": [ "error", {
+        "required": {
+          "some": [ "nesting", "id"  ]
+        }
+      }],
+      "jsx-a11y/label-has-for": [ "error", {
+        "required": {
+          "some": [ "nesting", "id"  ]
+        }
+      }],
     }
 };
