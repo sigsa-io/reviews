@@ -39,8 +39,8 @@ const Summary = ({
             </div>
 
             <div className="reviews-summary-overall-ratings-wrapper">
-              {Object.keys(overallRatings).map(category=>(
-                <div className="reviews-summary-overall-ratings-individual-wrapper">
+              {Object.keys(overallRatings).map((category, key) => (
+                <div key={key} className="reviews-summary-overall-ratings-individual-wrapper">
                   <div className="reviews-summary-overall-ratings-individual-rating">
                     {overallRatings[category]}
                   </div>
