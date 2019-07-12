@@ -1,6 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Summary = () => {
+const Summary = ({
+  summary: {
+    reviewersCount,
+    reviewsCount,
+    overallRatings,
+    ratingFrequencies,
+  },
+}) => {
 
   let overallRatings = {food:4.9,service:5.0,ambience:4.9,value:4.5};
   let averageRating = 4.9;
@@ -75,4 +83,18 @@ const Summary = () => {
 );
 };
 
+Summary.propTypes = {
+  summary: PropTypes.shape({
+    overall_ratings: PropTypes.exact({
+      food: PropTypes.number,
+      service: PropTypes.number,
+      ambience: PropTypes.number,
+      value: PropTypes.number,
+    }),
+    ratingFrequencies: PropTypes.objectOf(PropTypes.number),
+    restaurant_id: PropTypes.string,
+    reviewersCount: PropTypes.number,
+    reviewsCount: PropTypes.number,
+  }),
+};
 export default Summary;
