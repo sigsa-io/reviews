@@ -24,7 +24,7 @@ const Summary = ({
 
       <div className="reviews-summary-wrapper">
         <div className="reviews-summary-title">
-          What {reviewersCount} People Are Saying
+          {reviewersCount>1? `What ${reviewersCount} People Are Saying` : `What ${reviewersCount} Person Is Saying`}
         </div>
         <div className="reviews-summary-overall-wrapper">
           <div>
