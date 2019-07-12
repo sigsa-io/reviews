@@ -1,5 +1,9 @@
+const path = require ('path');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const DIST_DIR = path.resolve(ROOT_DIR, 'public');
+
 const express = require('express');
-const { getSummary, getReviews } = require('../database/index');
+const { getSummary, getReviews } = require(path.resolve(ROOT_DIR, 'database','index'));
 
 const app = express();
 const port = 3004;
