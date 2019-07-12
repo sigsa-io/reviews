@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true,
     },
     "extends": "airbnb",
     "globals": {
@@ -21,6 +22,25 @@ module.exports = {
     ],
     "rules": {
       "linebreak-style": ["warn", "unix"],
-      "camelcase": ["off", {"ignoreDestructuring": true}]
+      "camelcase": ["off", {"ignoreDestructuring": true}],
+      "jsx-a11y/label-has-associated-control": [ "error", {
+        "required": {
+          "some": [ "nesting", "id"  ]
+        }
+      }],
+      "jsx-a11y/label-has-for": [ "error", {
+        "required": {
+          "some": [ "nesting", "id"  ]
+        }
+      }],
+      "max-len": [
+        "off"
+      ],
+      "react/no-array-index-key": [
+        "warn"
+      ],
+      "no-unused-vars": [
+        "warn"
+      ],
     }
 };
