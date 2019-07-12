@@ -3,14 +3,15 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const DIST_DIR = path.resolve(ROOT_DIR, 'public');
 
 const express = require('express');
+
 const { getSummary, getReviews } = require(path.resolve(ROOT_DIR, 'database','index'));
 
 const app = express();
 const port = 3004;
 
-app.use(express.static('public'));
+app.use('/:restaurantId/reviews',express.static(DIST_DIR));
 
-app.get('/', (req, res) => res.send('Initial server request successful.'));
+app.use(express.static(DIST_DIR));
 
 app.get('/restaurants/:restaurant_id/reviews', (req, res) => {
   const { restaurant_id } = req.params;
