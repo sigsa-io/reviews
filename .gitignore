@@ -25,5 +25,27 @@ build/
 dist/
 public/bundle.js
 
-#tokens
+# tokens
 database/secrets.js
+
+# Do not track
+workspace.code-workspace
+.vscode/settings.json
+test/Jest/sum.js
+test/Jest/sum.test.js
+test/Jest/src/App.js
+test/Jest/src/components/Add.js
+test/Jest/sumtest.js
+test/Jest/Addtest.js
+test/Puppeteer/
+database/seed
+public/Opentable_summary.css
+client/constants.js
+.circleci/config.yml
+public/BrandonText-BoldItalic.otf
+public/BrandonText-Bold.otf
+public/BrandonText-Regular.otf
+public/BrandonText-RegularItalic.otf
+client/src/components/Feed.jsx
+public/index.html
+client/src/components/ignore/
