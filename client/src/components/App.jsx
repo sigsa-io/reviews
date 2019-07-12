@@ -25,9 +25,8 @@ class App extends React.Component {
   }
 
   getData(restaurantId) {
-    $.ajax({
+    $.get({
       url: `/restaurants/${restaurantId}/reviews`,
-      method: 'GET',
     })
       .done((data) => {
         const { summary, reviews } = JSON.parse(data);
