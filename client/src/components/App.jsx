@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import Summary from './Summary';
-import List from './List';
+import Feed from './Feed';
 
 class App extends React.Component {
 
