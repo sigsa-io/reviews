@@ -21,6 +21,20 @@ class App extends React.Component {
     this.setState(state);
   }
 
+  getData(restaurantId) {
+    $.ajax({
+      url: `/restaurants/${restaurantId}/reviews`,
+      method: 'GET',
+    })
+      .done((data) => {
+        const { summary, reviews } = JSON.parse(data);
+        this.setState({ restaurantId, summary, reviews });
+      })
+      .fail(function( jqXHR, textStatus ) {
+        alert( "Request failed: " + textStatus );
+      });
+  }
+
   render() {
     return (
       <div id="reviews">
