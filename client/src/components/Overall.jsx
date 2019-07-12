@@ -35,7 +35,10 @@ const Overall = ({
 
         <div className="reviews-summary-overall-ratings-wrapper">
           {Object.keys(overallRatings).map((category, key) => (
-            <div key={key} className="reviews-summary-overall-ratings-individual-wrapper">
+            <div
+              key={key}
+              className="reviews-summary-overall-ratings-individual-wrapper"
+            >
               <div className="reviews-summary-overall-ratings-individual-rating">
                 {overallRatings[category]}
               </div>
@@ -51,7 +54,12 @@ const Overall = ({
         <div className="reviews-summary-filter-overall-ratings">
 
           {ratingCategories.map((ratingCategory, key) => (
-            <div key={key} data-value={ratingCategory} data-parameter="filterByOverallRating" className="reviewUpdateParameter">
+            <div
+              key={key}
+              data-value={ratingCategory}
+              data-parameter="filterByOverallRating"
+              className="reviewUpdateParameter"
+            >
               <span>{ratingCategory}</span>
               <div className="reviews-summary-filter-overall-ratings-bar-container">
                 {ratingFrequencies[ratingCategory] ? (
