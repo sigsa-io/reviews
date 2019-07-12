@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Awards from './Awards';
+import Overall from './Overall';
 
 const Summary = ({
+  summary,
   summary: {
     reviewersCount,
     reviewsCount,
@@ -25,63 +27,10 @@ const Summary = ({
         <div className="reviews-summary-title">
           {reviewersCount > 1 ? `What ${reviewersCount} People Are Saying` : `What ${reviewersCount} Person Is Saying`}
         </div>
-        <div className="reviews-summary-overall-wrapper">
-          <div>
-            <div className="reviews-summary-subtitle">
-              Overall ratings and reviews
-            </div>
-            <div className="reviews-summary-overall-text">
-              Reviews can only be made by diners who have eaten at this restaurant
-            </div>
-            <div className="reviews-summary-overall-rating-average-wrapper">
-              <div className="reviews-star-rating-wrapper">
-                ★★★★★
-              </div>
-              <div className="reviews-short-text">
-                <span>{averageRatingValue}</span>
-                <span>based on recent ratings</span>
-              </div>
-            </div>
 
-            <div className="reviews-summary-overall-ratings-wrapper">
-              {Object.keys(overallRatings).map((category, key) => (
-                <div key={key} className="reviews-summary-overall-ratings-individual-wrapper">
-                  <div className="reviews-summary-overall-ratings-individual-rating">
-                    {overallRatings[category]}
-                  </div>
-                  <div className="reviews-summary-overall-ratings-individual-category">
-                    {category}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <Overall summary={summary}/>
 
-          <div className="reviews-summary-filter-overall-ratings-wrapper">
-            <div className="reviews-summary-filter-overall-ratings">
-
-              {ratingCategories.map((ratingCategory, key) => (
-                <div key={key} data-value={ratingCategory} data-parameter="filterByOverallRating" className="reviewUpdateParameter">
-                  <span>{ratingCategory}</span>
-                  <div className="reviews-summary-filter-overall-ratings-bar-container">
-                    {ratingFrequencies[ratingCategory] ? (
-                      <span
-                        style={{ width: `${ratingFrequencies[ratingCategory] / reviewsCount * 100}%` }}
-                        className="reviews-summary-filter-overall-ratings-bar"
-                      />
-                    ) : <span />}
-                    <span />
-                  </div>
-                </div>
-              ))}
-
-            </div>
-          </div>
-
-        </div>
-
-
-            <Awards awards={awards} awardLocality={awardLocality}/>
+        <Awards awards={awards} awardLocality={awardLocality}/>
 
       </div>
     </div>
