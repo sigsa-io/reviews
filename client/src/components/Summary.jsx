@@ -12,8 +12,7 @@ const Summary = ({
 
   const averageRatingValue = Object.values(overallRatings).reduce((x, y) => x + y) / Object.values(overallRatings).length;
 
-  return(
-    <div id="reviews-summary" className="reviews-summary">
+  const ratingCategories = [5, 4, 3, 2, 1];
 
 
 
@@ -57,14 +56,16 @@ const Summary = ({
           <div className="reviews-summary-filter-overall-ratings-wrapper">
             <div className="reviews-summary-filter-overall-ratings">
 
-              {ratingCategories.map( (ratingCategory) =>
-                <div data-value={ratingCategory} data-parameter="filterByOverallRating" className="reviewUpdateParameter">
+              {ratingCategories.map((ratingCategory, key) => (
+                <div key={key} data-value={ratingCategory} data-parameter="filterByOverallRating" className="reviewUpdateParameter">
                   <span>{ratingCategory}</span>
                   <div className="reviews-summary-filter-overall-ratings-bar-container">
+                    {ratingFrequencies[ratingCategory] ? (
                     <span
-                      style={{ width: numberOfReviewsByRating[ratingCategory]/numberOfReviews*100+`%` }}
-                      className="reviews-reviews-summary-filter-overall-ratings-bar"
+                        style={{ width: `${ratingFrequencies[ratingCategory] / reviewsCount * 100}%` }}
+                        className="reviews-summary-filter-overall-ratings-bar"
                     />
+                    ) : <span />}
                     <span />
                   </div>
                 </div>
