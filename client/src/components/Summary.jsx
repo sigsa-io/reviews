@@ -13,10 +13,6 @@ const Summary = ({
   },
 }) => {
 
-  const averageRatingValue = Object.values(overallRatings).reduce((x, y) => x + y) / Object.values(overallRatings).length;
-
-  const ratingCategories = [5, 4, 3, 2, 1];
-
   const awards = ['Best Overall', 'Best Food', 'Best Service', 'Best Ambiance', 'Fit for Foodies', 'Notable Wine List', 'Special Occasion', 'American', 'Best Overall', 'Best Food', 'Best Service', 'Best Ambiance', 'Fit for Foodies', 'Healthy', 'Notable Wine List', 'Special Occasion', 'American'];
   const awardLocality = 'San Francisco Bay Area';
 
