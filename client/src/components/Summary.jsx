@@ -23,7 +23,7 @@ const Summary = ({
 
       <div className="reviews-summary-wrapper">
         <div className="reviews-summary-title">
-          {reviewersCount>1? `What ${reviewersCount} People Are Saying` : `What ${reviewersCount} Person Is Saying`}
+          {reviewersCount > 1 ? `What ${reviewersCount} People Are Saying` : `What ${reviewersCount} Person Is Saying`}
         </div>
         <div className="reviews-summary-overall-wrapper">
           <div>
@@ -65,10 +65,10 @@ const Summary = ({
                   <span>{ratingCategory}</span>
                   <div className="reviews-summary-filter-overall-ratings-bar-container">
                     {ratingFrequencies[ratingCategory] ? (
-                    <span
+                      <span
                         style={{ width: `${ratingFrequencies[ratingCategory] / reviewsCount * 100}%` }}
                         className="reviews-summary-filter-overall-ratings-bar"
-                    />
+                      />
                     ) : <span />}
                     <span />
                   </div>
@@ -123,7 +123,7 @@ const Summary = ({
 
       </div>
     </div>
-);
+  );
 };
 
 Summary.propTypes = {
