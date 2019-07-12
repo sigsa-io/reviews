@@ -16,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
         <Summary summary={this.state.summary} />
+        <Feed reviews={this.state.reviews} />
       </div>
     );
   }
