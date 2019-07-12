@@ -14,7 +14,9 @@
     "start-client": "live-server public",
     "start-db": "mysql < ./database/schema.sql",
     "seed": "mysql < ./database/seed/seed.sql",
-    "test": "jest"
+    "test": "jest",
+    "screenshot-client": "node test/Puppeteer/scripts/client-screenshot.js",
+    "pdf-client": "node test/Puppeteer/scripts/client-pdf.js"
   },
   "repository": {
     "type": "git",
