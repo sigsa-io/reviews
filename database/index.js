@@ -40,7 +40,7 @@ module.exports.getSummary = (id, setSummaryCB) => {
       rating_overall,count(*)
       AS 'ratingFrequency'
       from reviews
-      where restaurant_id='26869'
+      where restaurant_id='${id}'
       group by rating_overall`;
 
     connection.query(queryText_frequencies, (err_frequencies, queryResults_frequencies) => {
