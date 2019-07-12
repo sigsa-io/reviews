@@ -11,6 +11,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const urlPath = window.location.pathname;
+    const restaurantId = /\d/.test(urlPath)? urlPath.split('/').filter((str) => !isNaN(parseInt(str)))[0] : '0';
   }
 
   changeState(newKeyVals) {
