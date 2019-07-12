@@ -10,12 +10,7 @@ const Summary = ({
   },
 }) => {
 
-  let overallRatings = {food:4.9,service:5.0,ambience:4.9,value:4.5};
-  let averageRating = 4.9;
-  let reviewersCount = 55;
-  let ratingCategories = [5,4,3,2,1];
-  let numberOfReviewsByRating = {1: 2, 2: 0 , 3: 3, 4: 8, 5: 87};
-  let numberOfReviews = Object.values(numberOfReviewsByRating).reduce((x,y)=> x+y);
+  const averageRatingValue = Object.values(overallRatings).reduce((x, y) => x + y) / Object.values(overallRatings).length;
 
   return(
     <div id="reviews-summary" className="reviews-summary">
@@ -39,7 +34,7 @@ const Summary = ({
                 ★★★★★
               </div>
               <div className="reviews-short-text">
-                <span>{averageRating}</span>
+                <span>{averageRatingValue}</span>
                 <span>based on recent ratings</span>
               </div>
             </div>
