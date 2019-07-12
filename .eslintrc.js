@@ -32,5 +32,14 @@ module.exports = {
           "some": [ "nesting", "id"  ]
         }
       }],
+      "max-len": [
+        "off"
+      ],
+      "react/no-array-index-key": [
+        "warn"
+      ],
+      "no-unused-vars": [
+        "warn"
+      ],
     }
 };
