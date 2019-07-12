@@ -13,6 +13,14 @@ class App extends React.Component {
   componentDidMount() {
   }
 
+  changeState(newKeyVals) {
+    const state = Object.assign({}, this.state);
+    for (const key in newKeyVals) {
+      state[key] = newKeyVals[key];
+    }
+    this.setState(state);
+  }
+
   render() {
     return (
       <div id="reviews">
