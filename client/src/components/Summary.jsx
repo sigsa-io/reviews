@@ -22,13 +22,16 @@ const Summary = ({
 
   return (
     <div id="reviews-summary" className="reviews-summary">
-
       <div className="reviews-summary-wrapper">
+
         <div className="reviews-summary-title">
-          {reviewersCount > 1 ? `What ${reviewersCount} People Are Saying` : `What ${reviewersCount} Person Is Saying`}
+          {reviewersCount > 1 ?
+            `What ${reviewersCount} People Are Saying` :
+            `What ${reviewersCount} Person Is Saying`
+          }
         </div>
 
-        <Overall summary={summary}/>
+        <Overall summary={summary} />
 
         <Awards awards={awards} awardLocality={awardLocality}/>
 
@@ -51,4 +54,5 @@ Summary.propTypes = {
     reviewsCount: PropTypes.number,
   }),
 };
+
 export default Summary;
