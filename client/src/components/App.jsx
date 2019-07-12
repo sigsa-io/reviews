@@ -12,8 +12,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const urlPath = window.location.pathname;
-    const restaurantId = /\d/.test(urlPath)? urlPath.split('/').filter((str) => !isNaN(parseInt(str)))[0] : '0';
-    restaurantId !== '0'? this.getData(restaurantId):this.setState(this.props.initialState);
+    const restaurantId = /\d/.test(urlPath) ? urlPath.split('/').filter((str) => !isNaN(parseInt(str)))[0] : '0';
+    restaurantId !== '0' ? this.getData(restaurantId) : this.setState(this.props.initialState);
   }
 
   changeState(newKeyVals) {
@@ -33,8 +33,8 @@ class App extends React.Component {
         const { summary, reviews } = JSON.parse(data);
         this.setState({ restaurantId, summary, reviews });
       })
-      .fail(function( jqXHR, textStatus ) {
-        alert( "Request failed: " + textStatus );
+      .fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
       });
   }
 
@@ -46,6 +46,6 @@ class App extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default App;
