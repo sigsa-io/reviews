@@ -13,6 +13,8 @@ app.use('/:restaurantId/reviews',express.static(DIST_DIR));
 
 app.use(express.static(DIST_DIR));
 
+app.get('/', (req, res) => res.send('restaurant ids: 26869, 4041, 0(mock data)'));
+
 app.get('/restaurants/:restaurant_id/reviews', (req, res) => {
   const { restaurant_id } = req.params;
 
