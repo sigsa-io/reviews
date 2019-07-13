@@ -17,7 +17,10 @@ const Header = ({
   const ratings = [rating_overall, rating_food, rating_service, rating_ambience];
 
   return (
-    <div className="reviews-individual-review-content-header">
+    <div
+      id={`review-header-container-${review_id}`}
+      className="reviews-individual-review-content-header"
+    >
       <div className="reviews-individual-review-content-header-top">
         <div className="reviews-star-rating-wrapper">
           ★★★★★

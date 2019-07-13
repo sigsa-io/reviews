@@ -3,6 +3,7 @@ import React from 'react';
 
 const Author = ({
   review: {
+    review_id,
     user_name,
     user_location,
     user_review_count,
@@ -13,7 +14,10 @@ const Author = ({
   const userInitials = user_name.split(' ')[0][0] + user_name.split(' ')[1][0];
 
   return (
-    <div className="reviews-individual-review-author-details">
+    <div
+      id={`reviews-${review_id}-author`}
+      className="reviews-individual-review-author-details"
+    >
       <div className="reviews-individual-review-author-initials-wrapper">
         <div className="reviews-individual-review-author-initials-color reviews-individual-review-author-initials-shape">
           <div className="reviews-individual-review-author-initials-text">{userInitials}</div>

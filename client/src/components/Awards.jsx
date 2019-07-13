@@ -9,7 +9,7 @@ const Awards = ({
   const numberOfDisplayedAwards = 3;
 
   return (
-    <div>
+    <div id="reviews-summary-awards">
       <div>
         <div className="reviews-summary-subtitle">Loved For</div>
 

@@ -6,10 +6,16 @@ import Footer from './Footer';
 
 const Content = ({
   review,
+  review: {
+    review_id,
+  },
 }) => {
 
   return (
-    <div className="reviews-individual-review-content">
+    <div
+      id={`review-content-container-${review_id}`}
+      className="reviews-individual-review-content"
+    >
       <Header review={review} />
       <Body review={review} />
       <Footer review={review} />

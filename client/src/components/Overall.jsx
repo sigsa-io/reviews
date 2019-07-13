@@ -15,7 +15,10 @@ const Overall = ({
   const ratingCategories = [5, 4, 3, 2, 1];
 
   return (
-    <div className="reviews-summary-overall-wrapper">
+    <div
+      id="reviews-summary-overall"
+      className="reviews-summary-overall-wrapper"
+    >
       <div>
         <div className="reviews-summary-subtitle">
           Overall ratings and reviews
