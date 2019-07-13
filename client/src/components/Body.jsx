@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Moment from 'Moment';
+import styles from '../styles/style.css';
 
 const Body = ({
   review: {
@@ -14,7 +15,7 @@ const Body = ({
     <div
       data-clamp="3"
       id={`review-body-container-${review_id}`}
-      className="reviewBodyContainer reviews-individual-review-content-body">
+      className={`reviewBodyContainer `+styles[`reviews-individual-review-content-body`]}>
       <p id={`review-body-original-${review_id}`} style={{}}>
         {body.split('\n').map((i, key) => (
           <object key={key}>

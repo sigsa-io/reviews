@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Awards from './Awards';
 import Overall from './Overall';
+import styles from '../styles/style.css';
 
 const Summary = ({
   summary,
@@ -17,10 +18,10 @@ const Summary = ({
   const awardLocality = 'San Francisco Bay Area';
 
   return (
-    <div id="reviews-summary" className="reviews-summary">
-      <div className="reviews-summary-wrapper">
+    <div id="reviews-summary" className={styles[`reviews-summary`]}>
+      <div className={styles[`reviews-summary-wrapper`]}>
 
-        <div className="reviews-summary-title">
+        <div className={styles[`reviews-summary-title`]}>
           {reviewersCount > 1 ?
             `What ${reviewersCount} People Are Saying` :
             `What ${reviewersCount} Person Is Saying`
