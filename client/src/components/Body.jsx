@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Moment from 'Moment';
 
-const Content = ({
+const Body = ({
   review: {
     review_id,
     body,
@@ -28,9 +28,9 @@ const Content = ({
   );
 };
 
-Content.propTypes = {
+Body.propTypes = {
   review_id: PropTypes.number,
   body: PropTypes.string,
 };
 
-export default Content;
+export default Body;
