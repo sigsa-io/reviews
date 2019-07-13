@@ -20,7 +20,7 @@ const Awards = ({
           {awards.map((award, key) => (
             <object key={key} data-hide={key > numberOfDisplayedAwards - 1} className="reviews-summary-awards-individual-wrapper">
               <div className="reviews-summary-awards-individual-container">
-                <div className="reviews-summary-awards-individual">
+                <div className="reviews-individual-icon-text-wrapper">
                   <div className="reviews-summary-awards-individual-icon-wrapper reviews-individual-icon-wrapper">
                     <i className="reviews-summary-awards-individual-icon" />
                   </div>
@@ -38,7 +38,7 @@ const Awards = ({
           {awards.length <= 3 ? <div /> : (
             <label htmlFor="dinersChoiceShowMore" className="reviews-summary-awards-individual-wrapper">
               <div className="reviews-summary-awards-individual-container">
-                <div className="reviews-summary-awards-individual">
+                <div className="reviews-individual-icon-text-wrapper">
                   <div className="reviews-individual-text-wrapper">
                     <div className="reviews-summary-awards-individual-name">
                       {`+${awards.length - numberOfDisplayedAwards} More`}
