@@ -10,17 +10,40 @@ module.exports = {
     path: DIST_DIR,
   },
 
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: {
+    extensions: [
+      '.js',
+      '.jsx'
+    ]
+  },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         include: SRC_DIR,
         loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env'],
+        options: {
+          presets: [
+            '@babel/preset-react',
+            '@babel/preset-env'
+          ],
         },
+      },
+      {
+        test: /\.css/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[path][name]__[local]___[hash:base64:5]',
+            },
+          }
+        ],
+        include: SRC_DIR,
       },
     ],
   },
