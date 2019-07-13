@@ -53,3 +53,5 @@ client/src/components/Helpful.jsx
 client/src/components/Footer.jsx
 client/src/components/Stars.jsx
 public/styles/
+client/src/components/Sort.jsx
+client/src/components/Filter.jsx
