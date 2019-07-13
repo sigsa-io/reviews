@@ -39,7 +39,6 @@ test/Jest/sumtest.js
 test/Jest/Addtest.js
 test/Puppeteer/
 database/seed
-public/Opentable_summary.css
 client/constants.js
 .circleci/config.yml
 public/BrandonText-BoldItalic.otf
@@ -48,3 +47,9 @@ public/BrandonText-Regular.otf
 public/BrandonText-RegularItalic.otf
 public/index.html
 client/src/components/ignore/
+client/src/components/ReadMore.jsx
+client/src/components/Report.jsx
+client/src/components/Helpful.jsx
+client/src/components/Footer.jsx
+client/src/components/Stars.jsx
+public/styles/
