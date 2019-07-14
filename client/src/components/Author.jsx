@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from '../styles/style.css';
 
 const Author = ({
   review: {
@@ -16,21 +17,21 @@ const Author = ({
   return (
     <div
       id={`reviews-${review_id}-author`}
-      className="reviews-individual-review-author-details"
+      className={styles[`reviews-individual-review-author-details`]}
     >
-      <div className="reviews-individual-review-author-initials-wrapper">
-        <div className="reviews-individual-review-author-initials-color reviews-individual-review-author-initials-shape">
-          <div className="reviews-individual-review-author-initials-text">{userInitials}</div>
+      <div className={styles[`reviews-individual-review-author-initials-wrapper`]}>
+        <div className={styles[`reviews-individual-review-author-initials-color`]+` `+styles[`reviews-individual-review-author-initials-shape`]}>
+          <div className={styles[`reviews-individual-review-author-initials-text`]}>{userInitials}</div>
         </div>
       </div>
-      <div className="reviews-individual-review-author-name-text">
+      <div className={styles[`reviews-individual-review-author-name-text`]}>
         <span><span>{userName}</span></span>
       </div>
-      <span className="reviews-individual-review-author-location-text">
+      <span className={styles[`reviews-individual-review-author-location-text`]}>
         {`${user_location} `}
       </span>
-      <div className="reviews-individual-review-author-review-count">
-        <span className="reviews-individual-review-author-review-count-icon" />
+      <div className={styles[`reviews-individual-review-author-review-count`]}>
+        <span className={styles[`reviews-individual-review-author-review-count-icon`]} />
         <span>{`${user_review_count} reviews `}</span>
       </div>
     </div>

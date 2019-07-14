@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Author from './Author';
 import Content from './Content';
+import styles from '../styles/style.css';
 
 const Review = ({
   review,
@@ -11,10 +12,10 @@ const Review = ({
 }) => {
 
   return (
-    <div id={review.review_id} className="reviewListItem reviews-individual-review-wrapper">
+    <div id={review.review_id} className={`reviewListItemstyles `+styles[`reviews-individual-review-wrapper`]}>
       <div
         id={`review-${review.review_id}`}
-        className="reviews-individual-review"
+        className={styles[`reviews-individual-review`]}
       >
         <Author review={review} />
         <Content review={review} />

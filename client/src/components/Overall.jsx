@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../styles/style.css';
 
 const Overall = ({
   summary: {
@@ -17,35 +18,35 @@ const Overall = ({
   return (
     <div
       id="reviews-summary-overall"
-      className="reviews-summary-overall-wrapper"
+      className={styles[`reviews-summary-overall-wrapper`]}
     >
       <div>
-        <div className="reviews-summary-subtitle">
+        <div className={styles[`reviews-summary-subtitle`]}>
           Overall ratings and reviews
         </div>
-        <div className="reviews-summary-overall-text">
+        <div className={styles[`reviews-summary-overall-text`]}>
           Reviews can only be made by diners who have eaten at this restaurant
         </div>
-        <div className="reviews-summary-overall-rating-average-wrapper">
-          <div className="reviews-star-rating-wrapper">
+        <div className={styles[`reviews-summary-overall-rating-average-wrapper`]}>
+          <div className={styles[`reviews-star-rating-wrapper`]}>
             ★★★★★
           </div>
-          <div className="reviews-short-text">
+          <div className={styles[`reviews-short-text`]}>
             <span>{averageRatingValue}</span>
             <span>based on recent ratings</span>
           </div>
         </div>
 
-        <div className="reviews-summary-overall-ratings-wrapper">
+        <div className={styles[`reviews-summary-overall-ratings-wrapper`]}>
           {Object.keys(overallRatings).map((category, key) => (
             <div
               key={key}
-              className="reviews-summary-overall-ratings-individual-wrapper"
+              className={styles[`reviews-summary-overall-ratings-individual-wrapper`]}
             >
-              <div className="reviews-summary-overall-ratings-individual-rating">
+              <div className={styles[`reviews-summary-overall-ratings-individual-rating`]}>
                 {overallRatings[category]}
               </div>
-              <div className="reviews-summary-overall-ratings-individual-category">
+              <div className={styles[`reviews-summary-overall-ratings-individual-category`]}>
                 {category}
               </div>
             </div>
@@ -53,8 +54,8 @@ const Overall = ({
         </div>
       </div>
 
-      <div className="reviews-summary-filter-overall-ratings-wrapper">
-        <div className="reviews-summary-filter-overall-ratings">
+      <div className={styles[`reviews-summary-filter-overall-ratings-wrapper`]}>
+        <div className={styles[`reviews-summary-filter-overall-ratings`]}>
 
           {ratingCategories.map((ratingCategory, key) => (
             <div
@@ -64,11 +65,11 @@ const Overall = ({
               className="reviewUpdateParameter"
             >
               <span>{ratingCategory}</span>
-              <div className="reviews-summary-filter-overall-ratings-bar-container">
+              <div className={styles[`reviews-summary-filter-overall-ratings-bar-container`]}>
                 {ratingFrequencies[ratingCategory] ? (
                   <span
                     style={{ width: `${ratingFrequencies[ratingCategory] / reviewsCount * 100}%` }}
-                    className="reviews-summary-filter-overall-ratings-bar"
+                    className={styles[`reviews-summary-filter-overall-ratings-bar`]}
                   />
                 ) : <span />}
                 <span />

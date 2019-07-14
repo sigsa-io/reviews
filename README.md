@@ -24,10 +24,11 @@ Reviews service created with Node.js, React, and MySQL.
 <!-- Here is a working live demo: -->
 
 # Features
+- Display reviews for a specific restaurant
+- Display aggregate rating data for a specific restaurant
+- Display a specific restaurant's awards
 
 ### In progress
-- Display reviews for a specific restaurant
-- Display average rating data for a specific restaurant
 - Sort reviews based on date
 - Sort reviews based on overall ratings
 
@@ -90,17 +91,17 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Start a MySql database server
 - From this repository's local root directory, create a `/database/secrets.js` file with the following content
   ```sh
-  module.exports.login = { 
+  module.exports.login = {
     user: 'Your_MySQL_Username',
     password: 'Your_MySQL_Password'
-  }; 
+  };
 
-  // Replace strings with your own MySQL username and password 
+  // Replace strings with your own MySQL username and password
   // Save this file
-  ``` 
+  ```
 
 - In a terminal, navigate to project's root directory
-- Run `npm run start-db` to migrate schema to database  
+- Run `npm run start-db` to migrate schema to database
 
 #### Other scripts
 Run scripts by navigating to this project's root directory from the terminal and entering `npm run <script name>`.

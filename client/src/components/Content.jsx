@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
+import styles from '../styles/style.css';
 
 const Content = ({
   review,
@@ -14,7 +15,7 @@ const Content = ({
   return (
     <div
       id={`review-content-container-${review_id}`}
-      className="reviews-individual-review-content"
+      className={styles[`reviews-individual-review-content`]}
     >
       <Header review={review} />
       <Body review={review} />
