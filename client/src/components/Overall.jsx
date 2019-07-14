@@ -89,7 +89,7 @@ const Overall = ({
 
 Overall.propTypes = {
   summary: PropTypes.shape({
-    overall_ratings: PropTypes.exact({
+    overallRatings: PropTypes.exact({
       food: PropTypes.number,
       service: PropTypes.number,
       ambience: PropTypes.number,
