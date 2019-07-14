@@ -6,4 +6,7 @@ module.exports = {
   setupFiles: [
     TEST_DIR,
   ],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules",
+  },
 };
