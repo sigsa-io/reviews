@@ -6,6 +6,7 @@
 @font-face {
   font-family: BrandonText;
   font-weight: bold;
+  font-weight: 500;
   src: url("./BrandonText-Bold.otf") format("opentype");
 }
 
@@ -25,6 +26,8 @@
 body {
   font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
+  width: 640px;
+  margin: 0 1rem 0 0;
 }
 
 #reviews {
@@ -39,8 +42,7 @@ body {
   display: flex
 }
 
-.reviews-summary-overall-ratings-individual-wrapper,
-.reviews-summary-overall-ratings-wrapper {
+.reviews-summary-overall-ratings-individual-wrapper {
   justify-content: space-evenly
 }
 
@@ -73,7 +75,9 @@ body {
   padding: 0;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.33
+  line-height: 1.33;
+  list-style: none;
+  text-align: center;
 }
 
 .reviews-summary-overall-ratings-individual-category {
@@ -297,12 +301,13 @@ body {
   margin: 0 0.5rem 0 0;
   font-weight: 500;
   display: flex;
-  align-items: center
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.43;
 }
 
-.reviews-short-text {
-  font-size: 0.875rem;
-  line-height: 1.43
+.reviews-short-text>span {
+  margin: 0 0.25rem;
 }
 
 .reviews-individual-review {
