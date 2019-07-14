@@ -3,6 +3,7 @@ import React from 'react';
 import styles from '../styles/style.css'
 
 const Stars = ({
+  id,
   rating,
 }) => {
   let fullStarsCount = Math.floor(rating);
@@ -10,7 +11,7 @@ const Stars = ({
   let emptyStarsCount = 5-fullStarsCount-Math.ceil(fractionalStar);
 
   return (
-    <div className={styles[`reviews-star-rating-wrapper`]}>
+    <div id={`reviews-star-rating-${id}`} className={styles[`reviews-star-rating-wrapper`]}>
       {Array(fullStarsCount).fill(1).map((_unused,key)=>{
         return(
         <object key={key} className={styles[`reviews-star-rating-individual-wrapper`]}>

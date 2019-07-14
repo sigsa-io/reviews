@@ -5,6 +5,7 @@ import Stars from './Stars';
 
 const Overall = ({
   summary: {
+    restaurant_id,
     reviewersCount,
     reviewsCount,
     overallRatings,
@@ -29,7 +30,7 @@ const Overall = ({
           Reviews can only be made by diners who have eaten at this restaurant
         </div>
         <div className={styles[`reviews-summary-overall-rating-average-wrapper`]}>
-          <Stars rating={averageRatingValue} />
+          <Stars id={`restaurant-${restaurant_id}`} rating={averageRatingValue} />
           <div className={styles[`reviews-short-text`]}>
             <span>{averageRatingValue}</span>
             <span>based on recent ratings</span>
