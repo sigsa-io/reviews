@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/style.css';
+import Stars from './Stars';
 
 const Overall = ({
   summary: {
@@ -28,9 +29,7 @@ const Overall = ({
           Reviews can only be made by diners who have eaten at this restaurant
         </div>
         <div className={styles[`reviews-summary-overall-rating-average-wrapper`]}>
-          <div className={styles[`reviews-star-rating-wrapper`]}>
-            ★★★★★
-          </div>
+          <Stars rating={averageRatingValue} />
           <div className={styles[`reviews-short-text`]}>
             <span>{averageRatingValue}</span>
             <span>based on recent ratings</span>

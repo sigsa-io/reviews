@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Moment from 'Moment';
+import Stars from './Stars';
 import styles from '../styles/style.css';
 
 const Header = ({
@@ -23,9 +24,10 @@ const Header = ({
       className={styles[`reviews-individual-review-content-header`]}
     >
       <div className={styles[`reviews-individual-review-content-header-top`]}>
-        <div className={styles[`reviews-star-rating-wrapper`]}>
+        <Stars rating={rating_overall}/>
+        {/* <div className={styles[`reviews-star-rating-wrapper`]}>
           ★★★★★
-        </div>
+        </div> */}
 
         <div className={styles[`reviews-individual-review-content-header-dine-date-wrapper`]}>
           <span className={styles[`reviews-individual-review-content-header-dine-date-text`]}>
