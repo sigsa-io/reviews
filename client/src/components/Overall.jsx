@@ -30,11 +30,14 @@ const Overall = ({
           Reviews can only be made by diners who have eaten at this restaurant
         </div>
         <div className={styles[`reviews-summary-overall-rating-average-wrapper`]}>
+
           <Stars id={`restaurant-${restaurant_id}`} rating={averageRatingValue} />
+
           <div className={styles[`reviews-short-text`]}>
             <span>{averageRatingValue}</span>
             <span>based on recent ratings</span>
           </div>
+
         </div>
 
         <div className={styles[`reviews-summary-overall-ratings-wrapper`]}>

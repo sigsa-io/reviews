@@ -24,16 +24,15 @@ const Header = ({
       className={styles[`reviews-individual-review-content-header`]}
     >
       <div className={styles[`reviews-individual-review-content-header-top`]}>
+
         <Stars id={`review-${review_id}`} rating={rating_overall}/>
-        {/* <div className={styles[`reviews-star-rating-wrapper`]}>
-          ★★★★★
-        </div> */}
 
         <div className={styles[`reviews-individual-review-content-header-dine-date-wrapper`]}>
           <span className={styles[`reviews-individual-review-content-header-dine-date-text`]}>
             {`Dined on ${Moment(dine_date).format('LL')}`}
           </span>
         </div>
+
       </div>
 
       <div className={styles[`reviews-individual-review-content-header-bottom`]}>
