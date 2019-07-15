@@ -41,7 +41,6 @@ client/src/components/ReadMore.jsx
 client/src/components/Report.jsx
 client/src/components/Helpful.jsx
 client/src/components/Footer.jsx
-client/src/components/Stars.jsx
 client/src/components/Sort.jsx
 client/src/components/Filter.jsx
 client/src/styles/ignore/

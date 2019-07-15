@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/style.css';
+import Stars from './Stars';
 
 const Overall = ({
   summary: {
+    restaurant_id,
     reviewersCount,
     reviewsCount,
     overallRatings,
@@ -28,13 +30,14 @@ const Overall = ({
           Reviews can only be made by diners who have eaten at this restaurant
         </div>
         <div className={styles[`reviews-summary-overall-rating-average-wrapper`]}>
-          <div className={styles[`reviews-star-rating-wrapper`]}>
-            ★★★★★
-          </div>
+
+          <Stars id={`restaurant-${restaurant_id}`} rating={averageRatingValue} />
+
           <div className={styles[`reviews-short-text`]}>
             <span>{averageRatingValue}</span>
             <span>based on recent ratings</span>
           </div>
+
         </div>
 
         <div className={styles[`reviews-summary-overall-ratings-wrapper`]}>
@@ -86,7 +89,7 @@ const Overall = ({
 
 Overall.propTypes = {
   summary: PropTypes.shape({
-    overall_ratings: PropTypes.exact({
+    overallRatings: PropTypes.exact({
       food: PropTypes.number,
       service: PropTypes.number,
       ambience: PropTypes.number,

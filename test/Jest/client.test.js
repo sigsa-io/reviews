@@ -14,6 +14,7 @@ import Author from '../../client/src/components/Author';
 import Content from '../../client/src/components/Content';
 import Header from '../../client/src/components/Header';
 import Body from '../../client/src/components/Body';
+import Stars from '../../client/src/components/Stars';
 
 describe('<App />', () => {
 
@@ -209,6 +210,29 @@ describe('<Body />', () => {
 
   it('should render at least one component', () => {
       let wrapper = shallow(<Body review={initialState.reviews[0]} />);
+      expect(wrapper.children().length).toBeGreaterThan(0);
+  });
+
+});
+
+describe('<Stars />', () => {
+
+  it('should render correctly in the summary', () => {
+    let overallRatings = initialState.summary.overallRatings;
+    const averageRatingValue = Object.values(overallRatings).reduce((x, y) => x + y) / Object.values(overallRatings).length;
+    let wrapper = shallow(<Stars id={`restaurant-${initialState.summary.restaurant_id}`} rating={averageRatingValue} />);
+    expect(wrapper.find(`#reviews-star-rating-restaurant-${initialState.summary.restaurant_id}`)).toHaveLength(1);
+    expect(wrapper.find('#reviews')).toHaveLength(0);
+  });
+
+  it('should render correctly in a review', () => {
+    let wrapper = shallow(<Stars id={`review-${initialState.reviews[0].review_id}`} rating={initialState.reviews[0].rating_overall} />);
+    expect(wrapper.find(`#reviews-star-rating-review-${initialState.reviews[0].review_id}`)).toHaveLength(1);
+    expect(wrapper.find('#reviews')).toHaveLength(0);
+  });
+
+  it('should render at least one component', () => {
+      let wrapper = shallow(<Stars id={initialState.summary.restaurant_id} rating={initialState.summary.overallRatings.food} />);
       expect(wrapper.children().length).toBeGreaterThan(0);
   });
 
