@@ -57,6 +57,7 @@ const Stars = ({
 };
 
 Stars.propTypes = {
+  id: PropTypes.string,
   rating: PropTypes.number,
 };
 
