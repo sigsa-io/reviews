@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Moment from 'Moment';
+import moment from 'moment';
 import Stars from './Stars';
 import styles from '../styles/style.css';
 
@@ -29,7 +29,7 @@ const Header = ({
 
         <div className={styles[`reviews-individual-review-content-header-dine-date-wrapper`]}>
           <span className={styles[`reviews-individual-review-content-header-dine-date-text`]}>
-            {`Dined on ${Moment(dine_date).format('LL')}`}
+            {`Dined on ${moment(dine_date).format('LL')}`}
           </span>
         </div>
 

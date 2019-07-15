@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Moment from 'Moment';
 import styles from '../styles/style.css';
 
 const Body = ({
