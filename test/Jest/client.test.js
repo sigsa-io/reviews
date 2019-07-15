@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import initialState from '../../client/src/initialState.js';
+import initialState from '../../client/src/InitialState.js';
 import App from '../../client/src/components/App';
 import Summary from '../../client/src/components/Summary';
 import Feed from '../../client/src/components/Feed';
