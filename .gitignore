@@ -35,7 +35,6 @@ test/Jest/ignore/
 test/Puppeteer/
 database/seed
 client/constants.js
-.circleci/config.yml
 client/src/components/ignore/
 client/src/components/ReadMore.jsx
 client/src/components/Report.jsx
